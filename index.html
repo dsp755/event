@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" id="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="button1" class="button">
+            Green
+        </div>
+        <div id="button2" class="button">
+            Yellow
+        </div>
+        <div id="button3" class="button">
+            Red
+        </div>
+    </div>
+
+
+    <script>
+
+        const buttons = Array.from(document.querySelectorAll(".button"));
+            buttons.forEach(button => button.addEventListener("click", push))
+            buttons.forEach(button => button.addEventListener("transitionend", removeTransition));
+
+        let light = document.querySelector("#light");
+
+        function push(e) {
+            e.target.classList.add("push")
+        }
+
+        function removeTransition(e) {
+            e.target.classList.remove("push")
+        }
+
+        button1.addEventListener("click", function(e) {
+            if (light.classList.contains("changeLight2") || light.classList.contains("changeLight3")) {
+                light.classList.replace("changeLight2", "changeLight1");
+                light.classList.replace("changeLight3", "changeLight1");
+            } else {
+                light.classList.add("changeLight1");
+            }
+        });
+
+        button2.addEventListener("click", function(e) {
+            if (light.classList.contains("changeLight1") || light.classList.contains("changeLight3")) {
+                light.classList.replace("changeLight1", "changeLight2");
+                light.classList.replace("changeLight3", "changeLight2");
+            } else {
+                light.classList.add("changeLight2");
+            }
+        });
+
+        button3.addEventListener("click", function(e) {
+            if (light.classList.contains("changeLight2") || light.classList.contains("changeLight1")) {
+                light.classList.replace("changeLight2", "changeLight3");
+                light.classList.replace("changeLight1", "changeLight3");
+            } else {
+                light.classList.add("changeLight3");
+            }
+        });
+
+
+    </script>
+
+
+</body>
+</html>
