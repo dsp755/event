@@ -1,0 +1,47 @@
+html {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: rgb(57, 131, 57);
+    transition: all .5s;
+}
+
+.container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-content: space-around;
+    align-items: center;
+    height: 100vh;
+    font-size: 20px;
+}
+
+.button {
+    padding: 3rem 0 0 0;
+    border: 5px solid rgb(58, 58, 58);
+    height: 80px;
+    width: 400px;
+    text-align: center;
+    background-color: rgb(65, 65, 65);
+    color: white;
+    border-radius: 20rem;
+    border-color: white;
+    margin: 6rem;
+}
+
+.changeLight1 {
+    background-color: rgb(57, 131, 57);
+}
+
+.changeLight2 {
+    background-color: rgb(182, 180, 65);
+}
+
+.changeLight3 {
+    background-color: rgb(180, 51, 51);
+}
+
+.push {
+    transition: all .1s;
+    transform: scale(1.1);
+}
