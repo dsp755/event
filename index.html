@@ -24,7 +24,9 @@
     <script>
 
         const buttons = Array.from(document.querySelectorAll(".button"));
-            buttons.forEach(button => button.addEventListener("click", push))
+        // следующие 2 строчки стоит выровнять влево, и можно использовать трюк Делегирование Событий -
+        // слушать их не на каждом баттоне, а на их обертке .container, идентифицируя кнопки по event.target'у
+            buttons.forEach(button => button.addEventListener("click", push))  // это можно заменить на обычные css-псевдоклассы
             buttons.forEach(button => button.addEventListener("transitionend", removeTransition));
 
         let light = document.querySelector("#light");
@@ -38,6 +40,9 @@
         }
 
         button1.addEventListener("click", function(e) {
+            // В этом коллбэке-обработчике можно проверять e.target и в зависимости
+            // от нажатой кнопки (их в твоей верстке можно по классу идентифицировать)
+            // навешивать разные классы с цветами. Но чтобы это сработало нужно повесить этот обработчик на .container
             if (light.classList.contains("changeLight2") || light.classList.contains("changeLight3")) {
                 light.classList.replace("changeLight2", "changeLight1");
                 light.classList.replace("changeLight3", "changeLight1");
