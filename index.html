@@ -26,7 +26,7 @@
         const buttons = Array.from(document.querySelectorAll(".button"));
         // следующие 2 строчки стоит выровнять влево, и можно использовать трюк Делегирование Событий -
         // слушать их не на каждом баттоне, а на их обертке .container, идентифицируя кнопки по event.target'у
-            buttons.forEach(button => button.addEventListener("click", push))  // это можно заменить на обычные css-псевдоклассы
+            buttons.forEach(button => button.addEventListener("click", push));  // это можно заменить на обычные css-псевдоклассы
             buttons.forEach(button => button.addEventListener("transitionend", removeTransition));
 
         let light = document.querySelector("#light");
